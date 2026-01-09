@@ -1,0 +1,45 @@
+---
+title: "Analiza Danych"
+output: workflowr::wflow_html
+---
+
+## Wstęp
+W tej analizie wykorzystam zbiór danych `iris`. Jest to klasyczny zbiór zawierający wymiary kwiatów (kosaćców) trzech różnych gatunków.
+Dla zapewnienia powtarzalności wyników (jeśli używałbym funkcji losowych), ustawiam ziarno losowości.
+
+```{r setup, message=FALSE, warning=FALSE}
+set.seed(123) 
+library(dplyr)
+library(ggplot2)
+
+# 1. Wybieram tylko gatunki setosa i versicolor
+dane_filtrowane <- iris %>% 
+  filter(Species != "virginica")
+
+# 2. Dodaję kolumnę "Proporcja" (Długość / Szerokość)
+dane_po_zmianach <- dane_filtrowane %>% 
+  mutate(Proporcja = Sepal.Length / Sepal.Width)
+
+# 3. Podsumowanie - średnia długość płatka dla gatunków
+podsumowanie <- iris %>% 
+  group_by(Species) %>% 
+  summarise(Srednia_Dlugosc = mean(Sepal.Length))
+
+print(podsumowanie)
+
+
+ggplot(iris, aes(x = Sepal.Length, fill = Species)) +
+  geom_histogram(bins = 20, alpha = 0.7, color = "black") +
+  labs(title = "Histogram długości działki kielicha",
+       x = "Długość (cm)",
+       y = "Liczebność") +
+  theme_minimal()
+
+
+ggplot(iris, aes(x = Species, y = Petal.Width, fill = Species)) +
+  geom_boxplot() +
+  labs(title = "Szerokość płatka wg gatunku",
+       x = "Gatunek",
+       y = "Szerokość płatka (cm)") +
+  theme_minimal()
+```

@@ -1,11 +1,18 @@
 ---
-title: "Home"
+title: "Strona Główna"
 site: workflowr::wflow_site
 output:
   workflowr::wflow_html:
     toc: false
-editor_options:
-  chunk_output_type: console
 ---
 
-Welcome to my research website.
+## Witaj na mojej stronie!
+
+Nazywam się Mateusz Drąg. Jestem studentem na kierunku informatyka i inżynieria danych.
+
+Poniżej zdjęcie mojej uczelni:
+
+![Moja Uczelnia](images/uczelnia.jpg)
+
+
+Ta strona została wykonana w pakiecie **workflowr** w celu zapewnienia powtarzalności badań.

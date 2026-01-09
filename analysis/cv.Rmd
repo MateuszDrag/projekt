@@ -1,0 +1,21 @@
+---
+title: "Moje CV"
+output: workflowr::wflow_html
+---
+
+## Dane podstawowe
+* **Imię i nazwisko:** [Mateusz Drąg]
+* **Email:** [mateusz.drag@icloud.com]
+
+## Wykształcenie
+* **2023 - obecnie:** Uniwersytet Przyrodniczy w Poznaniu (Kierunek: [Informatyka i inżynieria danych])
+* **2019 - 2023:** Zespół Szkół Górniczo-Energetycznych im. Stanisława Staszica w Koninie
+
+## Umiejętności
+* Podstawy języka R (dplyr, ggplot2)
+* Obsługa Git i GitHub
+* Praca z pakietem workflowr
+* Pakiet Office (Excel, PowerPoint)
+
+## Doświadczenie / Projekty
+* **Projekt zaliczeniowy z R:** Stworzenie reprodukowalnej strony internetowej z analizą danych.
