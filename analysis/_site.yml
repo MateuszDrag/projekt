@@ -11,10 +11,6 @@ navbar:
     href: analiza.html
   - text: Prezentacja
     href: prezentacja.html
-  - text: About
-    href: about.html
-  - text: License
-    href: license.html
   right:
   - icon: fab fa-github
     text: Source code
