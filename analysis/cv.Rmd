@@ -18,6 +18,8 @@ output: workflowr::wflow_html
 ### **2019 – 2023: Zespół Szkół Górniczo-Energetycznych w Koninie**
 * **Tytuł:** Technik informatyk
 
+## Doswiadczenie
+
 **06.2023 – 10.2023 | Hurtownia J-Ł**
 * *Stanowisko:* Pracownik fizyczny
 

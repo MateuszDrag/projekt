@@ -28,3 +28,6 @@ Zapraszam do nawigacji po zakładkach w górnym menu:
 1.  **CV** – Moje doświadczenie zawodowe, edukacja i umiejętności.
 2.  **Analiza** – Przykładowa analiza danych statystycznych wykonana w R (zbiór `iris`), zawierająca kod źródłowy i wykresy.
 3.  **Prezentacja** – Kilka slajdów o moich pasjach i zainteresowaniach (wykonane w Quarto).
+
+**Strona internetowa w R (Workflowr):**
+    Stworzenie reprodukowalnej strony internetowej zawierającej CV, prezentację multimedialną oraz analizę danych statystycznych z wykorzystaniem pakietów `dplyr` i `ggplot2`.
