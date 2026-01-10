@@ -5,14 +5,26 @@ output:
   workflowr::wflow_html:
     toc: false
 ---
-
 ## Witaj na mojej stronie!
 
-Nazywam się Mateusz Drąg. Jestem studentem na kierunku informatyka i inżynieria danych.
+Cześć! Nazywam się **Mateusz Drąg**.
 
-Poniżej zdjęcie mojej uczelni:
+Jestem studentem kierunku **Informatyka i inżynieria danych** na **Uniwersytecie Przyrodniczym w Poznaniu**.
 
-![Moja Uczelnia](images/uczelnia.jpg)
+Niniejsza strona powstała w ramach projektu zaliczeniowego z programowania w R. Jej celem jest przedstawienie idei **reprodukowalnych badań** (reproducible research).
 
+Cały projekt został wygenerowany przy użyciu pakietu **`workflowr`**, co gwarantuje przejrzystość kodu i powtarzalność wyników analizy.
 
-Ta strona została wykonana w pakiecie **workflowr** w celu zapewnienia powtarzalności badań.
+### Moja Uczelnia
+
+Poniżej zdjęcie głównego budynku mojej uczelni (Collegium Maximum):
+
+![Moja uczelnia](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/UP_Poznan.jpg/1280px-UP_Poznan.jpg)
+
+### Co znajdziesz na tej stronie?
+
+Zapraszam do nawigacji po zakładkach w górnym menu:
+
+1.  **CV** – Moje doświadczenie zawodowe, edukacja i umiejętności.
+2.  **Analiza** – Przykładowa analiza danych statystycznych wykonana w R (zbiór `iris`), zawierająca kod źródłowy i wykresy.
+3.  **Prezentacja** – Kilka slajdów o moich pasjach i zainteresowaniach (wykonane w Quarto).

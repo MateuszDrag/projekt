@@ -6,10 +6,25 @@ output: workflowr::wflow_html
 ## Dane podstawowe
 * **Imię i nazwisko:** [Mateusz Drąg]
 * **Email:** [mateusz.drag@icloud.com]
+* **Data urodzenia:** 05.06.2003
+* **Miejsce zamieszkania:** Konin
 
 ## Wykształcenie
-* **2023 - obecnie:** Uniwersytet Przyrodniczy w Poznaniu (Kierunek: [Informatyka i inżynieria danych])
-* **2019 - 2023:** Zespół Szkół Górniczo-Energetycznych im. Stanisława Staszica w Koninie
+
+### **2023 – obecnie: Uniwersytet Przyrodniczy w Poznaniu**
+* **Kierunek:** Informatyka i inżynieria danych
+* Studia stacjonarne I stopnia
+
+### **2019 – 2023: Zespół Szkół Górniczo-Energetycznych w Koninie**
+* **Tytuł:** Technik informatyk
+
+**06.2023 – 10.2023 | Hurtownia J-Ł**
+* *Stanowisko:* Pracownik fizyczny
+
+
+**06.2022 – 08.2022 | Stacja Paliw Lodigo**
+* *Stanowisko:* Sprzedawca
+
 
 ## Umiejętności
 * Podstawy języka R (dplyr, ggplot2)
@@ -17,5 +32,4 @@ output: workflowr::wflow_html
 * Praca z pakietem workflowr
 * Pakiet Office (Excel, PowerPoint)
 
-## Doświadczenie / Projekty
-* **Projekt zaliczeniowy z R:** Stworzenie reprodukowalnej strony internetowej z analizą danych.
+

@@ -4,42 +4,76 @@ output: workflowr::wflow_html
 ---
 
 ## Wstęp
-W tej analizie wykorzystam zbiór danych `iris`. Jest to klasyczny zbiór zawierający wymiary kwiatów (kosaćców) trzech różnych gatunków.
-Dla zapewnienia powtarzalności wyników (jeśli używałbym funkcji losowych), ustawiam ziarno losowości.
+W niniejszej analizie wykorzystano zbiór danych iris (Kosaćce). Jest to jeden z najsłynniejszych zbiorów w statystyce, wprowadzony przez Ronalda Fishera w 1936 roku.
+
+Zbiór zawiera 150 obserwacji dotyczących kwiatów z trzech gatunków: setosa, versicolor i virginica. Dla każdego kwiatu zmierzono 4 cechy (w centymetrach):
+
+Długość działki kielicha (Sepal.Length)
+
+Szerokość działki kielicha (Sepal.Width)
+
+Długość płatka (Petal.Length)
+
+Szerokość płatka (Petal.Width)
 
 ```{r setup, message=FALSE, warning=FALSE}
-set.seed(123) 
-library(dplyr)
+
+#Wczytanie wymaganych pakietów
+library(dplyr) 
 library(ggplot2)
 
-# 1. Wybieram tylko gatunki setosa i versicolor
-dane_filtrowane <- iris %>% 
-  filter(Species != "virginica")
-
-# 2. Dodaję kolumnę "Proporcja" (Długość / Szerokość)
-dane_po_zmianach <- dane_filtrowane %>% 
-  mutate(Proporcja = Sepal.Length / Sepal.Width)
-
-# 3. Podsumowanie - średnia długość płatka dla gatunków
-podsumowanie <- iris %>% 
-  group_by(Species) %>% 
-  summarise(Srednia_Dlugosc = mean(Sepal.Length))
-
-print(podsumowanie)
-
-
-ggplot(iris, aes(x = Sepal.Length, fill = Species)) +
-  geom_histogram(bins = 20, alpha = 0.7, color = "black") +
-  labs(title = "Histogram długości działki kielicha",
-       x = "Długość (cm)",
-       y = "Liczebność") +
-  theme_minimal()
-
-
-ggplot(iris, aes(x = Species, y = Petal.Width, fill = Species)) +
-  geom_boxplot() +
-  labs(title = "Szerokość płatka wg gatunku",
-       x = "Gatunek",
-       y = "Szerokość płatka (cm)") +
-  theme_minimal()
+#Ustawienie ziarna dla powtarzalności (na wypadek funkcji losowych)
+set.seed(123) 
 ```
+
+## Przekształcenia danych (dplyr)
+W tej sekcji wykonuję operacje na danych, aby przygotować je do wizualizacji i wyciągnąć podstawowe statystyki.
+
+Użyte funkcje:
+
+filter - wybieramy tylko dwa gatunki do porównania.
+
+mutate - tworzymy nową zmienną (proporcja wymiarów).
+
+group_by i summarise - liczymy średnie dla grup.
+
+```{r data-wrangling}
+
+#Filtrowanie i Mutacja
+#Wybieramy gatunki inne niż 'setosa' i tworzymy wskaźnik smukłości płatka
+iris_processing <- iris %>% filter(Species != "setosa") %>% mutate(Petal_Ratio = Petal.Length / Petal.Width)
+
+#Wyświetlenie pierwszych wierszy przetworzonych danych
+head(iris_processing)
+
+#Grupowanie i Podsumowanie
+#Liczymy średnią długość płatka dla każdego gatunku
+statystyki_gatunkow <- iris %>% group_by(Species) %>% summarise( Srednia_Dlugosc_Platka = mean(Petal.Length), Srednia_Szerokosc_Platka = mean(Petal.Width), Liczba_Obserwacji = n() )
+
+#Wyświetlenie tabeli wyników
+knitr::kable(statystyki_gatunkow, caption = "Średnie wymiary płatków wg gatunku") 
+```
+
+## Wizualizacje (ggplot2)
+Poniżej przedstawiono graficzną analizę zależności między cechami kwiatów.
+
+Wykres 1: Histogram długości kielicha
+Analiza rozkładu długości działki kielicha (Sepal.Length) dla wszystkich gatunków.
+```{r plot-histogram}
+ggplot(iris, aes(x = Sepal.Length, fill = Species)) + geom_histogram(bins = 20, color = "black", alpha = 0.7, position = "identity") + labs( title = "Histogram długości działki kielicha", subtitle = "Rozkład dla trzech gatunków kosaćca", x = "Długość (cm)", y = "Liczebność", fill = "Gatunek" ) + theme_minimal()
+```
+ Gatunek setosa (czerwony) ma wyraźnie krótsze kielichy i tworzy oddzielną grupę. Pozostałe dwa gatunki (versicolor i virginica) mają zbliżone rozkłady, które na siebie zachodzą.
+
+Wykres 2: Boxplot szerokości płatka
+Porównanie szerokości płatka (Petal.Width) między gatunkami za pomocą wykresu pudełkowego.
+```{r plot-boxplot}
+ggplot(iris, aes(x = Species, y = Petal.Width, fill = Species)) + geom_boxplot() + labs( title = "Rozkład szerokości płatka wg gatunku", x = "Gatunek", y = "Szerokość płatka (cm)" ) + theme_light()
+```
+Wykres pudełkowy idealnie pokazuje różnice między gatunkami. Setosa ma bardzo wąskie płatki (mała wariancja), Versicolor średnie, a Virginica najszersze. Nie ma części wspólnych między pudełkami, co oznacza, że ta cecha świetnie rozróżnia gatunki.
+
+Wykres 3: Scatter plot (Długość vs Szerokość płatka)
+Zbadanie korelacji między długością a szerokością płatka.
+```{r plot-scatter}
+ggplot(iris, aes(x = Petal.Length, y = Petal.Width, color = Species)) + geom_point(size = 3, alpha = 0.8) + geom_smooth(method = "lm", se = FALSE) + labs( title = "Zależność wymiarów płatka", subtitle = "Korelacja długości i szerokości", x = "Długość płatka (cm)", y = "Szerokość płatka (cm)", color = "Gatunek" ) + theme_bw()
+```
+Widoczna jest bardzo silna korelacja dodatnia – im dłuższy płatek, tym szerszy. Gatunki tworzą trzy wyraźne, odseparowane od siebie klastry. Liniowy charakter zależności utrzymuje się wewnątrz każdego gatunku. ``
