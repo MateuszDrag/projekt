@@ -32,6 +32,8 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-6.5.2/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet" />
 
 <link rel="icon" href="https://github.com/workflowr/workflowr-assets/raw/main/img/reproducible.png">
 <!-- Add a small amount of space between sections. -->
@@ -264,15 +266,15 @@ $(document).ready(function () {
 <li>
   <a href="prezentacja.html">Prezentacja</a>
 </li>
-<li>
-  <a href="about.html">About</a>
-</li>
-<li>
-  <a href="license.html">License</a>
-</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        
+        <li>
+  <a href="https://github.com/MateuszDrag/projekt">
+    <span class="fab fa-github"></span>
+     
+    Source code
+  </a>
+</li>
       </ul>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -311,7 +313,7 @@ class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2026-01-09
+<strong>Last updated:</strong> 2026-01-10
 </p>
 <p>
 <strong>Checks:</strong> <span
@@ -442,13 +444,15 @@ project makes it easier to run your code on other machines.</p>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongd4528be">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomMateuszDragprojekttreeee9eb29d4c335d0810830459ba53f08c3b78423atargetblankee9eb29a">
 <span class="glyphicon glyphicon-ok text-success"
-aria-hidden="true"></span> <strong>Repository version:</strong> d4528be
+aria-hidden="true"></span> <strong>Repository version:</strong>
+<a href="https://github.com/MateuszDrag/projekt/tree/ee9eb29d4c335d0810830459ba53f08c3b78423a" target="_blank">ee9eb29</a>
 </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongd4528be"
+<div
+id="strongRepositoryversionstrongahrefhttpsgithubcomMateuszDragprojekttreeee9eb29d4c335d0810830459ba53f08c3b78423atargetblankee9eb29a"
 class="panel-collapse collapse">
 <div class="panel-body">
 <p>
@@ -457,7 +461,8 @@ and connecting the code version to the results is critical for
 reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version d4528be.
+The results in this page were generated with repository version
+<a href="https://github.com/MateuszDrag/projekt/tree/ee9eb29d4c335d0810830459ba53f08c3b78423a" target="_blank">ee9eb29</a>.
 See the <em>Past versions</em> tab to see a history of the changes made
 to the R Markdown and HTML files.
 </p>
@@ -472,6 +477,8 @@ were generated:
 </p>
 <pre><code>
 Ignored files:
+    Ignored:    .Rhistory
+    Ignored:    .Rproj.user/
     Ignored:    analysis/prezentacja.html
 
 Untracked files:
@@ -527,7 +534,41 @@ Message
 Rmd
 </td>
 <td>
-d4528be
+<a href="https://github.com/MateuszDrag/projekt/blob/ee9eb29d4c335d0810830459ba53f08c3b78423a/analysis/analiza.Rmd" target="_blank">ee9eb29</a>
+</td>
+<td>
+MateuszDrag
+</td>
+<td>
+2026-01-10
+</td>
+<td>
+Publikacja strony
+</td>
+</tr>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/MateuszDrag/projekt/13bf9825b93ceefe6394adea0eb4a757c15d1233/docs/analiza.html" target="_blank">13bf982</a>
+</td>
+<td>
+MateuszDrag
+</td>
+<td>
+2026-01-09
+</td>
+<td>
+Build site.
+</td>
+</tr>
+<tr>
+<td>
+Rmd
+</td>
+<td>
+<a href="https://github.com/MateuszDrag/projekt/blob/d4528be0c4f4cec8e5603c2aad0f120ba6885ce4/analysis/analiza.Rmd" target="_blank">d4528be</a>
 </td>
 <td>
 MateuszDrag
@@ -548,48 +589,116 @@ Moja pierwsza strona
 </div>
 <div id="wstęp" class="section level2">
 <h2>Wstęp</h2>
-<p>W tej analizie wykorzystam zbiór danych <code>iris</code>. Jest to
-klasyczny zbiór zawierający wymiary kwiatów (kosaćców) trzech różnych
-gatunków. Dla zapewnienia powtarzalności wyników (jeśli używałbym
-funkcji losowych), ustawiam ziarno losowości.</p>
-<pre class="r"><code>set.seed(123) 
-library(dplyr)
+<p>W niniejszej analizie wykorzystano zbiór danych iris (Kosaćce). Jest
+to jeden z najsłynniejszych zbiorów w statystyce, wprowadzony przez
+Ronalda Fishera w 1936 roku.</p>
+<p>Zbiór zawiera 150 obserwacji dotyczących kwiatów z trzech gatunków:
+setosa, versicolor i virginica. Dla każdego kwiatu zmierzono 4 cechy (w
+centymetrach):</p>
+<p>Długość działki kielicha (Sepal.Length)</p>
+<p>Szerokość działki kielicha (Sepal.Width)</p>
+<p>Długość płatka (Petal.Length)</p>
+<p>Szerokość płatka (Petal.Width)</p>
+<pre class="r"><code>#Wczytanie wymaganych pakietów
+library(dplyr) 
 library(ggplot2)
 
-# 1. Wybieram tylko gatunki setosa i versicolor
-dane_filtrowane &lt;- iris %&gt;% 
-  filter(Species != &quot;virginica&quot;)
+#Ustawienie ziarna dla powtarzalności (na wypadek funkcji losowych)
+set.seed(123) </code></pre>
+</div>
+<div id="przekształcenia-danych-dplyr" class="section level2">
+<h2>Przekształcenia danych (dplyr)</h2>
+<p>W tej sekcji wykonuję operacje na danych, aby przygotować je do
+wizualizacji i wyciągnąć podstawowe statystyki.</p>
+<p>Użyte funkcje:</p>
+<p>filter - wybieramy tylko dwa gatunki do porównania.</p>
+<p>mutate - tworzymy nową zmienną (proporcja wymiarów).</p>
+<p>group_by i summarise - liczymy średnie dla grup.</p>
+<pre class="r"><code>#Filtrowanie i Mutacja
+#Wybieramy gatunki inne niż &#39;setosa&#39; i tworzymy wskaźnik smukłości płatka
+iris_processing &lt;- iris %&gt;% filter(Species != &quot;setosa&quot;) %&gt;% mutate(Petal_Ratio = Petal.Length / Petal.Width)
 
-# 2. Dodaję kolumnę &quot;Proporcja&quot; (Długość / Szerokość)
-dane_po_zmianach &lt;- dane_filtrowane %&gt;% 
-  mutate(Proporcja = Sepal.Length / Sepal.Width)
+#Wyświetlenie pierwszych wierszy przetworzonych danych
+head(iris_processing)</code></pre>
+<pre><code>  Sepal.Length Sepal.Width Petal.Length Petal.Width    Species Petal_Ratio
+1          7.0         3.2          4.7         1.4 versicolor    3.357143
+2          6.4         3.2          4.5         1.5 versicolor    3.000000
+3          6.9         3.1          4.9         1.5 versicolor    3.266667
+4          5.5         2.3          4.0         1.3 versicolor    3.076923
+5          6.5         2.8          4.6         1.5 versicolor    3.066667
+6          5.7         2.8          4.5         1.3 versicolor    3.461538</code></pre>
+<pre class="r"><code>#Grupowanie i Podsumowanie
+#Liczymy średnią długość płatka dla każdego gatunku
+statystyki_gatunkow &lt;- iris %&gt;% group_by(Species) %&gt;% summarise( Srednia_Dlugosc_Platka = mean(Petal.Length), Srednia_Szerokosc_Platka = mean(Petal.Width), Liczba_Obserwacji = n() )
 
-# 3. Podsumowanie - średnia długość płatka dla gatunków
-podsumowanie &lt;- iris %&gt;% 
-  group_by(Species) %&gt;% 
-  summarise(Srednia_Dlugosc = mean(Sepal.Length))
-
-print(podsumowanie)</code></pre>
-<pre><code># A tibble: 3 × 2
-  Species    Srednia_Dlugosc
-  &lt;fct&gt;                &lt;dbl&gt;
-1 setosa                5.01
-2 versicolor            5.94
-3 virginica             6.59</code></pre>
-<pre class="r"><code>ggplot(iris, aes(x = Sepal.Length, fill = Species)) +
-  geom_histogram(bins = 20, alpha = 0.7, color = &quot;black&quot;) +
-  labs(title = &quot;Histogram długości działki kielicha&quot;,
-       x = &quot;Długość (cm)&quot;,
-       y = &quot;Liczebność&quot;) +
-  theme_minimal()</code></pre>
-<p><img src="figure/analiza.Rmd/setup-1.png" alt="" width="672" style="display: block; margin: auto;" /></p>
-<pre class="r"><code>ggplot(iris, aes(x = Species, y = Petal.Width, fill = Species)) +
-  geom_boxplot() +
-  labs(title = &quot;Szerokość płatka wg gatunku&quot;,
-       x = &quot;Gatunek&quot;,
-       y = &quot;Szerokość płatka (cm)&quot;) +
-  theme_minimal()</code></pre>
-<p><img src="figure/analiza.Rmd/setup-2.png" alt="" width="672" style="display: block; margin: auto;" /></p>
+#Wyświetlenie tabeli wyników
+knitr::kable(statystyki_gatunkow, caption = &quot;Średnie wymiary płatków wg gatunku&quot;) </code></pre>
+<table style="width:100%;">
+<caption>Średnie wymiary płatków wg gatunku</caption>
+<colgroup>
+<col width="14%" />
+<col width="29%" />
+<col width="32%" />
+<col width="23%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Species</th>
+<th align="right">Srednia_Dlugosc_Platka</th>
+<th align="right">Srednia_Szerokosc_Platka</th>
+<th align="right">Liczba_Obserwacji</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">setosa</td>
+<td align="right">1.462</td>
+<td align="right">0.246</td>
+<td align="right">50</td>
+</tr>
+<tr class="even">
+<td align="left">versicolor</td>
+<td align="right">4.260</td>
+<td align="right">1.326</td>
+<td align="right">50</td>
+</tr>
+<tr class="odd">
+<td align="left">virginica</td>
+<td align="right">5.552</td>
+<td align="right">2.026</td>
+<td align="right">50</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="wizualizacje-ggplot2" class="section level2">
+<h2>Wizualizacje (ggplot2)</h2>
+<p>Poniżej przedstawiono graficzną analizę zależności między cechami
+kwiatów.</p>
+<p>Wykres 1: Histogram długości kielicha Analiza rozkładu długości
+działki kielicha (Sepal.Length) dla wszystkich gatunków.</p>
+<pre class="r"><code>ggplot(iris, aes(x = Sepal.Length, fill = Species)) + geom_histogram(bins = 20, color = &quot;black&quot;, alpha = 0.7, position = &quot;identity&quot;) + labs( title = &quot;Histogram długości działki kielicha&quot;, subtitle = &quot;Rozkład dla trzech gatunków kosaćca&quot;, x = &quot;Długość (cm)&quot;, y = &quot;Liczebność&quot;, fill = &quot;Gatunek&quot; ) + theme_minimal()</code></pre>
+<p><img src="figure/analiza.Rmd/plot-histogram-1.png" alt="" width="672" style="display: block; margin: auto;" />
+Gatunek setosa (czerwony) ma wyraźnie krótsze kielichy i tworzy
+oddzielną grupę. Pozostałe dwa gatunki (versicolor i virginica) mają
+zbliżone rozkłady, które na siebie zachodzą.</p>
+<p>Wykres 2: Boxplot szerokości płatka Porównanie szerokości płatka
+(Petal.Width) między gatunkami za pomocą wykresu pudełkowego.</p>
+<pre class="r"><code>ggplot(iris, aes(x = Species, y = Petal.Width, fill = Species)) + geom_boxplot() + labs( title = &quot;Rozkład szerokości płatka wg gatunku&quot;, x = &quot;Gatunek&quot;, y = &quot;Szerokość płatka (cm)&quot; ) + theme_light()</code></pre>
+<p><img src="figure/analiza.Rmd/plot-boxplot-1.png" alt="" width="672" style="display: block; margin: auto;" />
+Wykres pudełkowy idealnie pokazuje różnice między gatunkami. Setosa ma
+bardzo wąskie płatki (mała wariancja), Versicolor średnie, a Virginica
+najszersze. Nie ma części wspólnych między pudełkami, co oznacza, że ta
+cecha świetnie rozróżnia gatunki.</p>
+<p>Wykres 3: Scatter plot (Długość vs Szerokość płatka) Zbadanie
+korelacji między długością a szerokością płatka.</p>
+<pre class="r"><code>ggplot(iris, aes(x = Petal.Length, y = Petal.Width, color = Species)) + geom_point(size = 3, alpha = 0.8) + geom_smooth(method = &quot;lm&quot;, se = FALSE) + labs( title = &quot;Zależność wymiarów płatka&quot;, subtitle = &quot;Korelacja długości i szerokości&quot;, x = &quot;Długość płatka (cm)&quot;, y = &quot;Szerokość płatka (cm)&quot;, color = &quot;Gatunek&quot; ) + theme_bw()</code></pre>
+<pre><code>`geom_smooth()` using formula = &#39;y ~ x&#39;</code></pre>
+<p><img src="figure/analiza.Rmd/plot-scatter-1.png" alt="" width="672" style="display: block; margin: auto;" />
+Widoczna jest bardzo silna korelacja dodatnia – im dłuższy płatek, tym
+szerszy. Gatunki tworzą trzy wyraźne, odseparowane od siebie klastry.
+Liniowy charakter zależności utrzymuje się wewnątrz każdego gatunku.
+``</p>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
@@ -621,20 +730,21 @@ other attached packages:
 [1] ggplot2_4.0.1   dplyr_1.1.4     workflowr_1.7.2
 
 loaded via a namespace (and not attached):
- [1] gtable_0.3.6       jsonlite_2.0.0     compiler_4.5.2     promises_1.5.0    
- [5] tidyselect_1.2.1   Rcpp_1.1.0         stringr_1.6.0      git2r_0.36.2      
- [9] callr_3.7.6        later_1.4.4        jquerylib_0.1.4    scales_1.4.0      
-[13] yaml_2.3.12        fastmap_1.2.0      R6_2.6.1           labeling_0.4.3    
-[17] generics_0.1.4     knitr_1.51         tibble_3.3.0       rprojroot_2.1.1   
-[21] RColorBrewer_1.1-3 bslib_0.9.0        pillar_1.11.1      rlang_1.1.6       
-[25] utf8_1.2.6         cachem_1.1.0       stringi_1.8.7      httpuv_1.6.16     
-[29] xfun_0.55          S7_0.2.1           getPass_0.2-4      fs_1.6.6          
-[33] sass_0.4.10        otel_0.2.0         cli_3.6.5          withr_3.0.2       
-[37] magrittr_2.0.4     ps_1.9.1           grid_4.5.2         digest_0.6.39     
-[41] processx_3.8.6     rstudioapi_0.17.1  lifecycle_1.0.5    vctrs_0.6.5       
-[45] evaluate_1.0.5     glue_1.8.0         farver_2.1.2       whisker_0.4.1     
-[49] rmarkdown_2.30     httr_1.4.7         tools_4.5.2        pkgconfig_2.0.3   
-[53] htmltools_0.5.9   </code></pre>
+ [1] sass_0.4.10        generics_0.1.4     lattice_0.22-7     stringi_1.8.7     
+ [5] digest_0.6.39      magrittr_2.0.4     evaluate_1.0.5     grid_4.5.2        
+ [9] RColorBrewer_1.1-3 fastmap_1.2.0      Matrix_1.7-4       rprojroot_2.1.1   
+[13] jsonlite_2.0.0     processx_3.8.6     whisker_0.4.1      ps_1.9.1          
+[17] promises_1.5.0     httr_1.4.7         mgcv_1.9-3         scales_1.4.0      
+[21] jquerylib_0.1.4    cli_3.6.5          rlang_1.1.6        splines_4.5.2     
+[25] withr_3.0.2        cachem_1.1.0       yaml_2.3.12        otel_0.2.0        
+[29] tools_4.5.2        httpuv_1.6.16      vctrs_0.6.5        R6_2.6.1          
+[33] lifecycle_1.0.5    git2r_0.36.2       stringr_1.6.0      fs_1.6.6          
+[37] pkgconfig_2.0.3    callr_3.7.6        pillar_1.11.1      bslib_0.9.0       
+[41] later_1.4.4        gtable_0.3.6       glue_1.8.0         Rcpp_1.1.0        
+[45] xfun_0.55          tibble_3.3.0       tidyselect_1.2.1   rstudioapi_0.17.1 
+[49] knitr_1.51         farver_2.1.2       htmltools_0.5.9    nlme_3.1-168      
+[53] rmarkdown_2.30     labeling_0.4.3     compiler_4.5.2     getPass_0.2-4     
+[57] S7_0.2.1          </code></pre>
 </div>
 </div>
 </div>
