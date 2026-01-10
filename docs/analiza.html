@@ -444,15 +444,15 @@ project makes it easier to run your code on other machines.</p>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomMateuszDragprojekttreeee9eb29d4c335d0810830459ba53f08c3b78423atargetblankee9eb29a">
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomMateuszDragprojekttree71bdb51db83489d1afb1edeb60cd64d49b8d6317targetblank71bdb51a">
 <span class="glyphicon glyphicon-ok text-success"
 aria-hidden="true"></span> <strong>Repository version:</strong>
-<a href="https://github.com/MateuszDrag/projekt/tree/ee9eb29d4c335d0810830459ba53f08c3b78423a" target="_blank">ee9eb29</a>
+<a href="https://github.com/MateuszDrag/projekt/tree/71bdb51db83489d1afb1edeb60cd64d49b8d6317" target="_blank">71bdb51</a>
 </a>
 </p>
 </div>
 <div
-id="strongRepositoryversionstrongahrefhttpsgithubcomMateuszDragprojekttreeee9eb29d4c335d0810830459ba53f08c3b78423atargetblankee9eb29a"
+id="strongRepositoryversionstrongahrefhttpsgithubcomMateuszDragprojekttree71bdb51db83489d1afb1edeb60cd64d49b8d6317targetblank71bdb51a"
 class="panel-collapse collapse">
 <div class="panel-body">
 <p>
@@ -462,7 +462,7 @@ reproducibility.
 </p>
 <p>
 The results in this page were generated with repository version
-<a href="https://github.com/MateuszDrag/projekt/tree/ee9eb29d4c335d0810830459ba53f08c3b78423a" target="_blank">ee9eb29</a>.
+<a href="https://github.com/MateuszDrag/projekt/tree/71bdb51db83489d1afb1edeb60cd64d49b8d6317" target="_blank">71bdb51</a>.
 See the <em>Past versions</em> tab to see a history of the changes made
 to the R Markdown and HTML files.
 </p>
@@ -529,6 +529,23 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/MateuszDrag/projekt/d1e2b6c27c60bb581c40bb4147ba7b2ec3d090c5/docs/analiza.html" target="_blank">d1e2b6c</a>
+</td>
+<td>
+MateuszDrag
+</td>
+<td>
+2026-01-10
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -678,27 +695,138 @@ kwiatów.</p>
 <p>Wykres 1: Histogram długości kielicha Analiza rozkładu długości
 działki kielicha (Sepal.Length) dla wszystkich gatunków.</p>
 <pre class="r"><code>ggplot(iris, aes(x = Sepal.Length, fill = Species)) + geom_histogram(bins = 20, color = &quot;black&quot;, alpha = 0.7, position = &quot;identity&quot;) + labs( title = &quot;Histogram długości działki kielicha&quot;, subtitle = &quot;Rozkład dla trzech gatunków kosaćca&quot;, x = &quot;Długość (cm)&quot;, y = &quot;Liczebność&quot;, fill = &quot;Gatunek&quot; ) + theme_minimal()</code></pre>
-<p><img src="figure/analiza.Rmd/plot-histogram-1.png" alt="" width="672" style="display: block; margin: auto;" />
-Gatunek setosa (czerwony) ma wyraźnie krótsze kielichy i tworzy
+<p><img src="figure/analiza.Rmd/plot-histogram-1.png" alt="" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-plot-histogram-1">
+Past versions of plot-histogram-1.png
+</button>
+</p>
+<div id="fig-plot-histogram-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/MateuszDrag/projekt/blob/d1e2b6c27c60bb581c40bb4147ba7b2ec3d090c5/docs/figure/analiza.Rmd/plot-histogram-1.png" target="_blank">d1e2b6c</a>
+</td>
+<td>
+MateuszDrag
+</td>
+<td>
+2026-01-10
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Gatunek setosa (czerwony) ma wyraźnie krótsze kielichy i tworzy
 oddzielną grupę. Pozostałe dwa gatunki (versicolor i virginica) mają
 zbliżone rozkłady, które na siebie zachodzą.</p>
 <p>Wykres 2: Boxplot szerokości płatka Porównanie szerokości płatka
 (Petal.Width) między gatunkami za pomocą wykresu pudełkowego.</p>
 <pre class="r"><code>ggplot(iris, aes(x = Species, y = Petal.Width, fill = Species)) + geom_boxplot() + labs( title = &quot;Rozkład szerokości płatka wg gatunku&quot;, x = &quot;Gatunek&quot;, y = &quot;Szerokość płatka (cm)&quot; ) + theme_light()</code></pre>
-<p><img src="figure/analiza.Rmd/plot-boxplot-1.png" alt="" width="672" style="display: block; margin: auto;" />
-Wykres pudełkowy idealnie pokazuje różnice między gatunkami. Setosa ma
-bardzo wąskie płatki (mała wariancja), Versicolor średnie, a Virginica
-najszersze. Nie ma części wspólnych między pudełkami, co oznacza, że ta
-cecha świetnie rozróżnia gatunki.</p>
+<p><img src="figure/analiza.Rmd/plot-boxplot-1.png" alt="" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-plot-boxplot-1">
+Past versions of plot-boxplot-1.png
+</button>
+</p>
+<div id="fig-plot-boxplot-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/MateuszDrag/projekt/blob/d1e2b6c27c60bb581c40bb4147ba7b2ec3d090c5/docs/figure/analiza.Rmd/plot-boxplot-1.png" target="_blank">d1e2b6c</a>
+</td>
+<td>
+MateuszDrag
+</td>
+<td>
+2026-01-10
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Wykres pudełkowy idealnie pokazuje różnice między gatunkami. Setosa
+ma bardzo wąskie płatki (mała wariancja), Versicolor średnie, a
+Virginica najszersze. Nie ma części wspólnych między pudełkami, co
+oznacza, że ta cecha świetnie rozróżnia gatunki.</p>
 <p>Wykres 3: Scatter plot (Długość vs Szerokość płatka) Zbadanie
 korelacji między długością a szerokością płatka.</p>
 <pre class="r"><code>ggplot(iris, aes(x = Petal.Length, y = Petal.Width, color = Species)) + geom_point(size = 3, alpha = 0.8) + geom_smooth(method = &quot;lm&quot;, se = FALSE) + labs( title = &quot;Zależność wymiarów płatka&quot;, subtitle = &quot;Korelacja długości i szerokości&quot;, x = &quot;Długość płatka (cm)&quot;, y = &quot;Szerokość płatka (cm)&quot;, color = &quot;Gatunek&quot; ) + theme_bw()</code></pre>
 <pre><code>`geom_smooth()` using formula = &#39;y ~ x&#39;</code></pre>
-<p><img src="figure/analiza.Rmd/plot-scatter-1.png" alt="" width="672" style="display: block; margin: auto;" />
-Widoczna jest bardzo silna korelacja dodatnia – im dłuższy płatek, tym
-szerszy. Gatunki tworzą trzy wyraźne, odseparowane od siebie klastry.
-Liniowy charakter zależności utrzymuje się wewnątrz każdego gatunku.
-``</p>
+<p><img src="figure/analiza.Rmd/plot-scatter-1.png" alt="" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-plot-scatter-1">
+Past versions of plot-scatter-1.png
+</button>
+</p>
+<div id="fig-plot-scatter-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/MateuszDrag/projekt/blob/d1e2b6c27c60bb581c40bb4147ba7b2ec3d090c5/docs/figure/analiza.Rmd/plot-scatter-1.png" target="_blank">d1e2b6c</a>
+</td>
+<td>
+MateuszDrag
+</td>
+<td>
+2026-01-10
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Widoczna jest bardzo silna korelacja dodatnia – im dłuższy płatek,
+tym szerszy. Gatunki tworzą trzy wyraźne, odseparowane od siebie
+klastry. Liniowy charakter zależności utrzymuje się wewnątrz każdego
+gatunku. ``</p>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
