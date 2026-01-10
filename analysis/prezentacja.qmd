@@ -1,0 +1,67 @@
+---
+title: "Moje Pasje i Zainteresowania"
+author: "Mateusz Drąg"
+format: revealjs
+editor: visual
+theme: moon
+slide-number: true
+embed-resources: true
+---
+
+## 1. Wstęp - Kim jestem?
+
+Witajcie na mojej prezentacji. Chciałbym opowiedzieć krótko o tym, co mnie interesuje i co robię w wolnym czasie.
+
+**Główne obszary moich zainteresowań:**
+
+-   Muzyka (festiwale i koncerty)
+-   Kinematografia (dobre filmy)
+-   Gaming (gry strategiczne i RPG)
+-   Nowinki technologiczne
+
+## 2. Muzyka
+
+**Muzyka towarzyszy mi każdego dnia. Korzystam ze Spotify, ale uwielbiam też muzykę na żywo.**
+
+-   Ulubiony gatunek: Rock alternatywny / Pop
+-   Ostatni koncert: Tate Mcrae
+-   Nastepny koncert: The Weeknd
+
+## 3. Kinematografia
+
+Jestem fanem kina science-fiction oraz dobrych thrillerów. Klimat sali kinowej jest nie do podrobienia.
+
+![Sala kinowa](https://www.cinema-city.pl/static/dam/jcr:87d621d0-e8a2-49cf-80bc-7422631cc607/01.jpg)
+
+## 4. Analiza gustu filmowego
+
+Jako fan statystyk, stworzyłem małe zestawienie moich ocen dla ostatnich 5 filmów, które obejrzałem. Użyłem do tego prostej ramki danych w R.
+
+```{r}
+library(ggplot2)
+
+filmy <- data.frame( Tytul = c("Diuna", "Batman", "Barbie", "Oppenheimer", "Avatar"), Ocena = c(9, 8, 7, 10, 6) )
+
+ggplot(filmy, aes(x = Tytul, y = Ocena, fill = Tytul)) + geom_col() + labs(title = "Moje oceny ostatnich filmów", y = "Ocena (1-10)") + theme_minimal() 
+```
+
+## 5. Gry Wideo
+
+Gry to dla mnie forma interaktywnej opowieści. - Lubię gry z dobrą fabułą (np. Wiedźmin 3). - Czasami gram w gry strategiczne, co rozwija logiczne myślenie. - Interesuję się też rynkiem e-sportowym.
+
+## 6.Czas w grach
+
+Poniżej wykres punktowy, który symuluje zależność między ceną gry a liczbą godzin, jaką w niej spędziłem.
+
+```{r}
+library(ggplot2)
+gry <- data.frame( Cena_PLN = c(50, 200, 120, 40, 250), Godziny = c(10, 150, 40, 5, 80), Gatunek = c("Indie", "RPG", "FPS", "Puzzle", "RPG") )
+
+ggplot(gry, aes(x = Cena_PLN, y = Godziny, color = Gatunek)) + geom_point(size = 5) + labs(title = "Cena gry a czas rozgrywki", x = "Cena (PLN)", y = "Spędzone godziny") + theme_light() 
+```
+
+## 7.Koniec
+
+Dziękuję za obejrzenie mojej prezentacji!
+
+Mam nadzieję, że udało mi się pokazać, co lubię robić w wolnym czasie, wykorzystując przy tym umiejętności nabyte na zajęciach z R.
