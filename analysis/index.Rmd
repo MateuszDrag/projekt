@@ -11,9 +11,8 @@ Cześć! Nazywam się **Mateusz Drąg**.
 
 Jestem studentem kierunku **Informatyka i inżynieria danych** na **Uniwersytecie Przyrodniczym w Poznaniu**.
 
-Niniejsza strona powstała w ramach projektu zaliczeniowego z programowania w R. Jej celem jest przedstawienie idei **reprodukowalnych badań** (reproducible research).
 
-Cały projekt został wygenerowany przy użyciu pakietu **`workflowr`**, co gwarantuje przejrzystość kodu i powtarzalność wyników analizy.
+Cały projekt został wygenerowany przy użyciu pakietu **`workflowr`**
 
 ### Moja Uczelnia
 
@@ -29,5 +28,4 @@ Zapraszam do nawigacji po zakładkach w górnym menu:
 2.  **Analiza** – Przykładowa analiza danych statystycznych wykonana w R (zbiór `iris`), zawierająca kod źródłowy i wykresy.
 3.  **Prezentacja** – Kilka slajdów o moich pasjach i zainteresowaniach (wykonane w Quarto).
 
-**Strona internetowa w R (Workflowr):**
-    Stworzenie reprodukowalnej strony internetowej zawierającej CV, prezentację multimedialną oraz analizę danych statystycznych z wykorzystaniem pakietów `dplyr` i `ggplot2`.
+
