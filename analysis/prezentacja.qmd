@@ -17,45 +17,52 @@ Witajcie na mojej prezentacji. Chciałbym opowiedzieć krótko o tym, co mnie in
 -   Muzyka (festiwale i koncerty)
 -   Kinematografia (dobre filmy)
 -   Gaming (gry strategiczne i RPG)
--   Nowinki technologiczne
+
 
 ## 2. Muzyka
 
 **Muzyka towarzyszy mi każdego dnia. Korzystam ze Spotify, ale uwielbiam też muzykę na żywo.**
 
--   Ulubiony gatunek: Rock alternatywny / Pop
--   Ostatni koncert: Tate Mcrae
--   Nastepny koncert: The Weeknd
+Muzyka jest dla mnie ważną częścią codziennego życia i sposobem na oderwanie się od rutyny.
+Największą przyjemność sprawiają mi koncerty i festiwale, gdzie można poczuć energię tłumu i wyjątkową atmosferę wydarzeń na żywo.
+Cenię różnorodność gatunków oraz możliwość odkrywania nowych artystów.
+
 
 ## 3. Kinematografia
 
-Jestem fanem kina science-fiction oraz dobrych thrillerów. Klimat sali kinowej jest nie do podrobienia.
+Filmy traktuję jako formę rozrywki, ale także źródło inspiracji i refleksji.
+Najbardziej interesują mnie produkcje z dobrze napisaną fabułą, wyrazistymi bohaterami i ciekawym przesłaniem.
+Lubię analizować historie oraz sposób, w jaki film oddziałuje na emocje widza.
 
 ![Sala kinowa](https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=1000&auto=format&fit=crop)
 
 ## 4. Analiza gustu filmowego
 
-Jako fan statystyk, stworzyłem małe zestawienie moich ocen dla ostatnich 5 filmów, które obejrzałem. Użyłem do tego prostej ramki danych w R.
+Stworzyłem małe zestawienie moich ocen dla ostatnich 5 filmów, które obejrzałem. Użyłem do tego prostej ramki danych w R.
 
 ```{r}
 library(ggplot2)
 
-filmy <- data.frame( Tytul = c("Diuna", "Batman", "Barbie", "Oppenheimer", "Avatar"), Ocena = c(9, 8, 7, 10, 6) )
+filmy <- data.frame( Tytul = c("Diuna", "Batman", "Barbie", "Oppenheimer", "Avatar"), Ocena = c(9, 8, 7.5, 10, 5) )
 
 ggplot(filmy, aes(x = Tytul, y = Ocena, fill = Tytul)) + geom_col() + labs(title = "Moje oceny ostatnich filmów", y = "Ocena (1-10)") + theme_minimal() 
 ```
 
 ## 5. Gry Wideo
 
-Gry to dla mnie forma interaktywnej opowieści. - Lubię gry z dobrą fabułą (np. Wiedźmin 3). - Czasami gram w gry strategiczne, co rozwija logiczne myślenie. - Interesuję się też rynkiem e-sportowym.
+Gry to dla mnie forma interaktywnej opowieści.
+
+-   Lubię gry z dobrą fabułą (np. Wiedźmin 3). 
+-   Czasami gram w gry strategiczne, co rozwija logiczne myślenie.
+-   Interesuję się też rynkiem e-sportowym.
 
 ## 6.Czas w grach
 
-Poniżej wykres punktowy, który symuluje zależność między ceną gry a liczbą godzin, jaką w niej spędziłem.
+Poniżej wykres punktowy, który spokazuje zależność między ceną gry a liczbą godzin, jaką w niej spędziłem.
 
 ```{r}
 library(ggplot2)
-gry <- data.frame( Cena_PLN = c(50, 200, 120, 40, 250), Godziny = c(10, 150, 40, 5, 80), Gatunek = c("Indie", "RPG", "FPS", "Puzzle", "RPG") )
+gry <- data.frame( Cena_PLN = c(50, 200, 120, 40, 250), Godziny = c(10, 150, 40, 5, 80), Gatunek = c("Indie", "Horror", "FPS", "Symulatory", "RPG") )
 
 ggplot(gry, aes(x = Cena_PLN, y = Godziny, color = Gatunek)) + geom_point(size = 5) + labs(title = "Cena gry a czas rozgrywki", x = "Cena (PLN)", y = "Spędzone godziny") + theme_light() 
 ```
